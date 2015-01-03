@@ -10,10 +10,10 @@ With apache tomacat as the web server.We are using maven to build the project an
 TOPIC
 
 * Download and install required tools
-*[maven](http://maven.apache.org/)
-*[java](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
-*[eclipse](https://eclipse.org/downloads/)
-*[tomcat](http://tomcat.apache.org/download-70.cgi)
+ * [maven](http://maven.apache.org/)
+ * [java](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+ * [eclipse](https://eclipse.org/downloads/)
+ * [tomcat](http://tomcat.apache.org/download-70.cgi)
 
 * Create a maven project with the following command
 {% highlight java %}
@@ -79,8 +79,52 @@ mvn eclipse:eclipse -Dwtpversion=2.0
 
 * Deploy the project in tomcat
 
+ * Update tomcat-users.xml
+{% highlight xml%}
+<?xml version='1.0' encoding='utf-8'?>
+<tomcat-users>
+ 
+	<role rolename="manager-gui"/>
+	<role rolename="manager-script"/>
+	<user username="admin" password="password" roles="manager-gui,manager-script" />
+ 
+</tomcat-users>
+{% endhighlight %}
+
+ * update maven settings.xml
+{% highlight xml%}
+<?xml version="1.0" encoding="UTF-8"?>
+<settings >
+	<servers>
+ 
+		<server>
+			<id>TomcatServer</id>
+			<username>admin</username>
+			<password>password</password>
+		</server>
+ 
+	</servers>
+</settings>
+{% endhighlight %}
+ * Update project pox.xml
+{% highlight xml%}
+	<plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+			<url>http://localhost:8080/manager/text</url>
+			<server>TomcatServer</server>
+			<path>/helloworldrest</path>
+		</configuration>
+	</plugin>
+{% endhighlight %}
+
+ * Deploying undeploy and redeploy the appplication archive
 {% highlight java %}
-mvn tomcat7:deploy
+mvn tomcat7:deploy 
+mvn tomcat7:undeploy 
+mvn tomcat7:redeploy
 {% endhighlight %}
 
 * Project Demo
