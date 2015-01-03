@@ -1,8 +1,9 @@
 # Site settings
 title: javaindepth
 email: rakeshr.21@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-The idea of the blog is to understand and discuss java in depth and various functionality , Happy coding 
+description: 
+The idea of the blog is to understand and discuss java in depth and various functionality
+Happy coding :)  
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 #twitter_username: javaindepth
