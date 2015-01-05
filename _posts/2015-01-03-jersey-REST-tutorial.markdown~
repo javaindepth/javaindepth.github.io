@@ -3,8 +3,9 @@ layout: post
 title:  "RESTful web service with Jersey !"
 date:   2015-01-03 14:03:17
 categories: jekyll update
+comments: true
 ---
-The purpose of this tutorial is to get aquaintained with RESTfull web service. We are using Jersy API to help implement a RESTful web service.
+The purpose of this tutorial is to get acquaintance with RESTfull web service. We are using Jersy API to help implement a RESTful web service.
 With apache tomacat as the web server.We are using maven to build the project and delpoy the project archive to tomcat. 
 
 TOPIC
@@ -135,4 +136,20 @@ mvn tomcat7:redeploy
 
 [https://github.com/javaindepth/resthelloworld](https://github.com/javaindepth/resthelloworld)
 
+{% if page.comments %}
+     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'javaindepth'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+       
+{% endif %}
 
