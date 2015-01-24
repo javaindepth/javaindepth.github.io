@@ -107,7 +107,7 @@ mvn eclipse:eclipse -Dwtpversion=2.0
 	</servers>
 </settings>
 {% endhighlight %}
- * Update project pox.xml
+ * Update project pom.xml
 {% highlight xml%}
 	<plugin>
 		<groupId>org.apache.tomcat.maven</groupId>
