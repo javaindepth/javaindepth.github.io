@@ -6,7 +6,7 @@ categories: jekyll update
 comments: true
 ---
 
-The spring rest tutorial gives you a basic introduction to string rest api with maven.
+Spring is an integral part of any java devlopment and the api is widely used in the industy,and hence cant be ignored. The spring rest tutorial gives you a basic introduction to string rest api with maven. 
 
 TOPIC
 
